@@ -10,4 +10,4 @@ const bookSchema = new Schema({
   link: String,
 });
 
-const Book = mongoose.model("Book", bookSchema);
+const Books = mongoose.model("Book", bookSchema);
