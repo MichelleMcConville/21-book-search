@@ -8,4 +8,11 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findById: function (req, res) {
+    db.Book
+      .findById(req.params.id)
+      .them(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
 }
