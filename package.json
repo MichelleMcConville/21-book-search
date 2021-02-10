@@ -11,18 +11,26 @@
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichelleMcConville/21-book-search.git"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.19.4"
+  "bugs": {
+    "url": "https://github.com/MichelleMcConville/21-book-search/issues"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "express": "^4.17.1",
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
     "if-env": "^1.0.4",
-    "mongoose": "^5.11.15"
+    "mongoose": "^5.3.16"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
   }
 }
