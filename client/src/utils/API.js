@@ -1,22 +1,29 @@
 import axios from "axios";
-import moment from "moment";
 
 export default {
-  getBooks: function (query) {
-    return axios.get("./api/books", { params: {q: query} });
-  },
-  getSavedBooks: function () {
-    return axios.get("/api/savedBooks");
-  },
-  saveBook: function (bookData) {
-    return axios.post("./api/savedBooks", bookData);
-  },
-  deleteSavedBook: function (googleId) {
-    return axios.delete(`/api/savedBooks/${googleId}`);
-  },
-  getDate: function (id) {
-    let timestamp = id.toString().substring(0,8)
-    let date = new Date(parseInt(timestamp, 16) * 1000)
-    return (moment(date).format("MMM D, YYY @ h:mma"));
-  }
+    // Search Google Books
+    searchBooks: function(searchTerm) {
+        return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`);
+    },
+
+    // Saves a book to MongoDB
+    saveBook: function (bookData) {
+        return axios.post("/api/books", bookData);
+    },
+
+    // Gets all books saved to MongoDB
+    getBooks: function () {
+        return axios.get("/api/books");
+    },
+
+    // Deletes the book with the given id from MongoDB
+    deleteBook: function (id) {
+        return axios.delete("/api/books/" + id);
+    },
+
+    // Not used
+    // Gets the book with the given id from MongoDB
+    // getBook: function (id) {
+    //     return axios.get("/api/books/" + id);
+    // }
 };
