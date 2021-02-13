@@ -1,5 +1,3 @@
-export default NoMatch;
-
 import React, { Component } from "react";
 
 class NoMatch extends Component {
