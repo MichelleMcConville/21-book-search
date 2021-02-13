@@ -6,8 +6,6 @@ import Search from "./pages/Search";
 import Saved from "./pages/Saved";
 import NoMatch from "./pages/NoMatch";
 
-import "./App.css";
-
 function App() {
   return (
     <Router>
