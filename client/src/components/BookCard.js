@@ -9,8 +9,8 @@ const Book = (props) => {
   return (
     <Col md={12}>
       <Card className="mb-4 shadow-sm" page={props.page}>
-        <Card.Body style={{backgroundColor: "azure"}}>
-          <Card.Title className="text-center">{props.data.title}</Card.Title>
+        <Card.Body style={{backgroundColor: "azure" }}>
+          <Card.Title className="text-center" style={{ margin: "0px" }}>{props.data.title}</Card.Title>
           <Card.Subtitle className="text-center">{props.data.subtitle}</Card.Subtitle><br />
           <Card.Subtitle className="text-center">{"Written By " + props.data.authors}</Card.Subtitle><br />
           {props.data.image || props.data.imageLinks ? (
