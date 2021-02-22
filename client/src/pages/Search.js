@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { SearchBox, FormBtn } from "../components/Form";
+import { Col, Container, Row } from "react-bootstrap";
+import { FormBtn, SearchBox } from "../components/Form";
 import API from "../utils/API";
 import BookCard from "../components/BookCard";
 
@@ -57,13 +55,15 @@ const Search = () => {
           <Col>
             <form>
               <h2>Search for a book:</h2>
-              <SearchBox onChange={handleInputChange} name="book search box" placeholder="Keywords" style={{backgroundColor: "azure"}}/>
-              <FormBtn onClick={handleFormSubmit}>Search</FormBtn>
+              <div className="input-group">
+                <input onChange={handleInputChange} type="search" name="book search box" className="form-control rounded" placeholder="Keywords" style={{ backgroundColor: "azure", display: "inline", width: "90%" }} />
+                <FormBtn onClick={handleFormSubmit} style={{ display: "inline", float: "right", width: "10%" }}>Search</FormBtn>
+              </div>
             </form>
           </Col>
         </Row>
       </Container>
-      <section className="pt-5">
+      <section className="pt-4">
         <Container>
           <h2>Search results</h2>
           <Row>{books ? books.map((book) => <BookCard key={book.id} data={book.volumeInfo} page="search" handleBookSubmit={handleBookSubmit} />) : null}</Row>
